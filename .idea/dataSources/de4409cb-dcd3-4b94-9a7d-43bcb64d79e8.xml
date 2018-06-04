@@ -1,0 +1,2880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="nbadb">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.8">
+    <root id="1">
+      <ServerVersion>3.20.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="calendar"/>
+    <table id="7" parent="2" name="calendar1"/>
+    <table id="8" parent="2" name="coach"/>
+    <table id="9" parent="2" name="game_officials"/>
+    <table id="10" parent="2" name="officials"/>
+    <table id="11" parent="2" name="player_adv_stats"/>
+    <table id="12" parent="2" name="player_defense_stats"/>
+    <table id="13" parent="2" name="player_misc_stats"/>
+    <table id="14" parent="2" name="player_shooting_stats"/>
+    <table id="15" parent="2" name="player_stats"/>
+    <table id="16" parent="2" name="players"/>
+    <table id="17" parent="2" name="seasons"/>
+    <table id="18" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="19" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="20" parent="2" name="team"/>
+    <table id="21" parent="2" name="team_adv_stats"/>
+    <table id="22" parent="2" name="team_def_stats"/>
+    <table id="23" parent="2" name="team_scoring_stats"/>
+    <table id="24" parent="2" name="team_shooting_stats"/>
+    <table id="25" parent="2" name="team_stats"/>
+    <table id="26" parent="2" name="team_stats_away"/>
+    <table id="27" parent="2" name="team_stats_home"/>
+    <column id="28" parent="6" name="GAME_DATE_EST">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="29" parent="6" name="GAME_SEQUENCE">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="30" parent="6" name="GAME_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="31" parent="6" name="GAME_STATUS_ID">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="32" parent="6" name="GAME_STATUS_TEXT">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="33" parent="6" name="GAMECODE">
+      <Position>6</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="34" parent="6" name="HOME_TEAM_ID">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="35" parent="6" name="VISITOR_TEAM_ID">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="36" parent="6" name="SEASON">
+      <Position>9</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="37" parent="6" name="LIVE_PERIOD">
+      <Position>10</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="38" parent="6" name="LIVE_PC_TIME">
+      <Position>11</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="39" parent="6" name="NATL_TV_BROADCASTER_ABBREVIATION">
+      <Position>12</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="40" parent="6" name="LIVE_PERIOD_TIME_BCAST">
+      <Position>13</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="41" parent="6" name="WH_STATUS">
+      <Position>14</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="42" parent="6">
+      <ColNames>GAME_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="6">
+      <ColNames>HOME_TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="44" parent="6">
+      <ColNames>VISITOR_TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="45" parent="6">
+      <ColNames>SEASON</ColNames>
+      <RefTableName>seasons</RefTableName>
+      <RefColNames>season</RefColNames>
+    </foreign-key>
+    <column id="46" parent="7" name="GAME_DATE_EST">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="47" parent="7" name="GAME_SEQUENCE">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="48" parent="7" name="GAME_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="49" parent="7" name="GAME_STATUS_ID">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="50" parent="7" name="GAME_STATUS_TEXT">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="51" parent="7" name="GAMECODE">
+      <Position>6</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="52" parent="7" name="HOME_TEAM_ID">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="53" parent="7" name="VISITOR_TEAM_ID">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="54" parent="7" name="SEASON">
+      <Position>9</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="55" parent="7" name="LIVE_PERIOD">
+      <Position>10</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="56" parent="7" name="LIVE_PC_TIME">
+      <Position>11</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="57" parent="7" name="NATL_TV_BROADCASTER_ABBREVIATION">
+      <Position>12</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="58" parent="7" name="LIVE_PERIOD_TIME_BCAST">
+      <Position>13</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="59" parent="7" name="WH_STATUS">
+      <Position>14</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="60" parent="7">
+      <ColNames>GAME_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="8" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="62" parent="8" name="SEASON">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="63" parent="8" name="COACH_ID">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="64" parent="8" name="FIRST_NAME">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="65" parent="8" name="LAST_NAME">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="66" parent="8" name="COACH_NAME">
+      <Position>6</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="67" parent="8" name="COACH_CODE">
+      <Position>7</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="68" parent="8" name="IS_ASSISTANT">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="69" parent="8" name="COACH_TYPE">
+      <Position>9</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="70" parent="8" name="SCHOOL">
+      <Position>10</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="71" parent="8" name="SORT_SEQUENCE">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <index id="72" parent="8" name="sqlite_autoindex_coach_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>COACH_ID</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="73" parent="8">
+      <ColNames>COACH_ID</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_coach_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="74" parent="8">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="75" parent="9" name="OFFICIAL_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="76" parent="9" name="FIRST_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="77" parent="9" name="LAST_NAME">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="78" parent="9" name="JERSEY_NUM">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="79" parent="9" name="GAME_ID">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="80" parent="9">
+      <ColNames>OFFICIAL_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="81" parent="9" name="game_officials____fk">
+      <ColNames>FIRST_NAME
+LAST_NAME</ColNames>
+      <RefTableName>officials</RefTableName>
+      <RefKeyName>officials_FirstName_LastName_pk</RefKeyName>
+      <RefColNames>FirstName
+LastName</RefColNames>
+    </foreign-key>
+    <foreign-key id="82" parent="9">
+      <ColNames>GAME_ID</ColNames>
+      <RefTableName>calendar</RefTableName>
+      <RefColNames>GAME_ID</RefColNames>
+    </foreign-key>
+    <column id="83" parent="10" name="FirstName">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="84" parent="10" name="LastName">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="85" parent="10" name="Lg">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="86" parent="10" name="G">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="87" parent="10" name="FGA Per Game">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="88" parent="10" name="FTA Per Game">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="89" parent="10" name="PF Per Game">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="90" parent="10" name="PTS Per Game">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="91" parent="10" name="FGA Per Game Relative">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="92" parent="10" name="FTA Per Game Relative">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="93" parent="10" name="PF Per Game Relative">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="94" parent="10" name="PTS Per Game Relative">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="95" parent="10" name="W/L% Home Teams">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="96" parent="10" name="FGA Home Teams">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="97" parent="10" name="FTA Home Teams">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="98" parent="10" name="PF Home Teams">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="99" parent="10" name="PTS Home Teams">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="100" parent="10" name="W/L% Visitor Teams">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="101" parent="10" name="FGA Visitor Teams">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="102" parent="10" name="FTA Visitor Teams">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="103" parent="10" name="PF Visitor Teams">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="104" parent="10" name="PTS Visitor Teams">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="105" parent="10" name="W/L% Home Minus Visitor">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="106" parent="10" name="FGA Home Minus Visitor">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="107" parent="10" name="FTA Home Minus Visitor">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="108" parent="10" name="PF Home Minus Visitor">
+      <Position>26</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="109" parent="10" name="PTS Home Minus Visitor">
+      <Position>27</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="110" parent="10" name="W/L% Relative to Average*">
+      <Position>28</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="111" parent="10" name="FGA Relative to Average*">
+      <Position>29</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="112" parent="10" name="FTA Relative to Average*">
+      <Position>30</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="113" parent="10" name="PF Relative to Average*">
+      <Position>31</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="114" parent="10" name="PTS Relative to Average*">
+      <Position>32</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <index id="115" parent="10" name="sqlite_autoindex_officials_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>FirstName
+LastName</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="116" parent="10" name="officials_FirstName_LastName_pk">
+      <ColNames>FirstName
+LastName</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_officials_1</UnderlyingIndexName>
+    </key>
+    <column id="117" parent="11" name="PLAYER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="118" parent="11" name="PLAYER_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="119" parent="11" name="TEAM_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="120" parent="11" name="TEAM_ABBREVIATION">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="121" parent="11" name="AGE">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="122" parent="11" name="GP">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="123" parent="11" name="W">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="124" parent="11" name="L">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="125" parent="11" name="W_PCT">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="126" parent="11" name="MIN">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="127" parent="11" name="OFF_RATING">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="128" parent="11" name="DEF_RATING">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="129" parent="11" name="NET_RATING">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="130" parent="11" name="AST_PCT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="131" parent="11" name="AST_TO">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="132" parent="11" name="AST_RATIO">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="133" parent="11" name="OREB_PCT">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="134" parent="11" name="DREB_PCT">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="135" parent="11" name="REB_PCT">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="136" parent="11" name="TM_TOV_PCT">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="137" parent="11" name="EFG_PCT">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="138" parent="11" name="TS_PCT">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="139" parent="11" name="USG_PCT">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="140" parent="11" name="PACE">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="141" parent="11" name="PIE">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="142" parent="11" name="FGM">
+      <Position>26</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="143" parent="11" name="FGA">
+      <Position>27</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="144" parent="11" name="FGM_PG">
+      <Position>28</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="145" parent="11" name="FGA_PG">
+      <Position>29</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="146" parent="11" name="FG_PCT">
+      <Position>30</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="147" parent="11" name="GP_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="148" parent="11" name="W_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="149" parent="11" name="L_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="150" parent="11" name="W_PCT_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="151" parent="11" name="MIN_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="152" parent="11" name="OFF_RATING_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="153" parent="11" name="DEF_RATING_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="154" parent="11" name="NET_RATING_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="155" parent="11" name="AST_PCT_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="156" parent="11" name="AST_TO_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="157" parent="11" name="AST_RATIO_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="158" parent="11" name="OREB_PCT_RANK">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="159" parent="11" name="DREB_PCT_RANK">
+      <Position>43</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="160" parent="11" name="REB_PCT_RANK">
+      <Position>44</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="161" parent="11" name="TM_TOV_PCT_RANK">
+      <Position>45</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="162" parent="11" name="EFG_PCT_RANK">
+      <Position>46</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="163" parent="11" name="TS_PCT_RANK">
+      <Position>47</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="164" parent="11" name="USG_PCT_RANK">
+      <Position>48</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="165" parent="11" name="PACE_RANK">
+      <Position>49</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="166" parent="11" name="PIE_RANK">
+      <Position>50</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="167" parent="11" name="FGM_RANK">
+      <Position>51</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="168" parent="11" name="FGA_RANK">
+      <Position>52</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="169" parent="11" name="FGM_PG_RANK">
+      <Position>53</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="170" parent="11" name="FGA_PG_RANK">
+      <Position>54</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="171" parent="11" name="FG_PCT_RANK">
+      <Position>55</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="172" parent="11" name="CFID">
+      <Position>56</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="173" parent="11" name="CFPARAMS">
+      <Position>57</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="174" parent="11">
+      <ColNames>PLAYER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="175" parent="11">
+      <ColNames>PLAYER_ID</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefColNames>PLAYER_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="176" parent="11">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="177" parent="12" name="PLAYER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="178" parent="12" name="PLAYER_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="179" parent="12" name="TEAM_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="180" parent="12" name="TEAM_ABBREVIATION">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="181" parent="12" name="AGE">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="182" parent="12" name="GP">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="183" parent="12" name="W">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="184" parent="12" name="L">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="185" parent="12" name="W_PCT">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="186" parent="12" name="MIN">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="187" parent="12" name="DEF_RATING">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="188" parent="12" name="DREB">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="189" parent="12" name="DREB_PCT">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="190" parent="12" name="PCT_DREB">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="191" parent="12" name="STL">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="192" parent="12" name="PCT_STL">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="193" parent="12" name="BLK">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="194" parent="12" name="PCT_BLK">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="195" parent="12" name="OPP_PTS_OFF_TOV">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="196" parent="12" name="OPP_PTS_2ND_CHANCE">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="197" parent="12" name="OPP_PTS_FB">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="198" parent="12" name="OPP_PTS_PAINT">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="199" parent="12" name="DEF_WS">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="200" parent="12" name="GP_RANK">
+      <Position>24</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="201" parent="12" name="W_RANK">
+      <Position>25</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="202" parent="12" name="L_RANK">
+      <Position>26</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="203" parent="12" name="W_PCT_RANK">
+      <Position>27</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="204" parent="12" name="MIN_RANK">
+      <Position>28</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="205" parent="12" name="DEF_RATING_RANK">
+      <Position>29</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="206" parent="12" name="DREB_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="207" parent="12" name="DREB_PCT_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="208" parent="12" name="PCT_DREB_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="209" parent="12" name="STL_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="210" parent="12" name="PCT_STL_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="211" parent="12" name="BLK_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="212" parent="12" name="PCT_BLK_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="213" parent="12" name="OPP_PTS_OFF_TOV_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="214" parent="12" name="OPP_PTS_2ND_CHANCE_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="215" parent="12" name="OPP_PTS_FB_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="216" parent="12" name="OPP_PTS_PAINT_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="217" parent="12" name="DEF_WS_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="218" parent="12" name="CFID">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="219" parent="12" name="CFPARAMS">
+      <Position>43</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="220" parent="12">
+      <ColNames>PLAYER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="221" parent="12">
+      <ColNames>PLAYER_ID</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefColNames>PLAYER_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="222" parent="12">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="223" parent="13" name="PLAYER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="224" parent="13" name="PLAYER_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="225" parent="13" name="TEAM_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="226" parent="13" name="TEAM_ABBREVIATION">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="227" parent="13" name="AGE">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="228" parent="13" name="GP">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="229" parent="13" name="W">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="230" parent="13" name="L">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="231" parent="13" name="W_PCT">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="232" parent="13" name="MIN">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="233" parent="13" name="PTS_OFF_TOV">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="234" parent="13" name="PTS_2ND_CHANCE">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="235" parent="13" name="PTS_FB">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="236" parent="13" name="PTS_PAINT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="237" parent="13" name="OPP_PTS_OFF_TOV">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="238" parent="13" name="OPP_PTS_2ND_CHANCE">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="239" parent="13" name="OPP_PTS_FB">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="240" parent="13" name="OPP_PTS_PAINT">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="241" parent="13" name="BLK">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="242" parent="13" name="BLKA">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="243" parent="13" name="PF">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="244" parent="13" name="PFD">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="245" parent="13" name="NBA_FANTASY_PTS">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="246" parent="13" name="GP_RANK">
+      <Position>24</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="247" parent="13" name="W_RANK">
+      <Position>25</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="248" parent="13" name="L_RANK">
+      <Position>26</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="249" parent="13" name="W_PCT_RANK">
+      <Position>27</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="250" parent="13" name="MIN_RANK">
+      <Position>28</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="251" parent="13" name="PTS_OFF_TOV_RANK">
+      <Position>29</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="252" parent="13" name="PTS_2ND_CHANCE_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="253" parent="13" name="PTS_FB_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="254" parent="13" name="PTS_PAINT_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="255" parent="13" name="OPP_PTS_OFF_TOV_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="256" parent="13" name="OPP_PTS_2ND_CHANCE_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="257" parent="13" name="OPP_PTS_FB_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="258" parent="13" name="OPP_PTS_PAINT_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="259" parent="13" name="BLK_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="260" parent="13" name="BLKA_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="261" parent="13" name="PF_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="262" parent="13" name="PFD_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="263" parent="13" name="NBA_FANTASY_PTS_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="264" parent="13" name="CFID">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="265" parent="13" name="CFPARAMS">
+      <Position>43</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="266" parent="13">
+      <ColNames>PLAYER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="267" parent="13">
+      <ColNames>PLAYER_ID</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefColNames>PLAYER_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="268" parent="13">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="269" parent="14" name="PLAYER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="270" parent="14" name="PLAYER_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="271" parent="14" name="TEAM_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="272" parent="14" name="TEAM_ABBREVIATION">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="273" parent="14" name="AGE">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="274" parent="14" name="Restricted Area FGM">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="275" parent="14" name="Restricted Area FGA">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="276" parent="14" name="Restricted Area FG_PCT">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="277" parent="14" name="In The Paint (Non-RA) FGM">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="278" parent="14" name="In The Paint (Non-RA) FGA">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="279" parent="14" name="In The Paint (Non-RA) FG_PCT">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="280" parent="14" name="Mid-Range FGM">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="281" parent="14" name="Mid-Range FGA">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="282" parent="14" name="Mid-Range FG_PCT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="283" parent="14" name="Left Corner 3 FGM">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="284" parent="14" name="Left Corner 3 FGA">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="285" parent="14" name="Left Corner 3 FG_PCT">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="286" parent="14" name="Right Corner 3 FGM">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="287" parent="14" name="Right Corner 3 FGA">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="288" parent="14" name="Right Corner 3 FG_PCT">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="289" parent="14" name="Above the Break 3 FGM">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="290" parent="14" name="Above the Break 3 FGA">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="291" parent="14" name="Above the Break 3 FG_PCT">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="292" parent="14" name="Backcourt FGM">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="293" parent="14" name="Backcourt FGA">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="294" parent="14" name="Backcourt FG_PCT">
+      <Position>26</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <key id="295" parent="14">
+      <ColNames>PLAYER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="296" parent="14">
+      <ColNames>PLAYER_ID</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefColNames>PLAYER_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="297" parent="14">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="298" parent="15" name="PLAYER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="299" parent="15" name="PLAYER_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="300" parent="15" name="TEAM_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="301" parent="15" name="TEAM_ABBREVIATION">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="302" parent="15" name="AGE">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="303" parent="15" name="GP">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="304" parent="15" name="W">
+      <Position>7</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="305" parent="15" name="L">
+      <Position>8</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="306" parent="15" name="W_PCT">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="307" parent="15" name="MIN">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="308" parent="15" name="FGM">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="309" parent="15" name="FGA">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="310" parent="15" name="FG_PCT">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="311" parent="15" name="FG3M">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="312" parent="15" name="FG3A">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="313" parent="15" name="FG3_PCT">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="314" parent="15" name="FTM">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="315" parent="15" name="FTA">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="316" parent="15" name="FT_PCT">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="317" parent="15" name="OREB">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="318" parent="15" name="DREB">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="319" parent="15" name="REB">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="320" parent="15" name="AST">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="321" parent="15" name="TOV">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="322" parent="15" name="STL">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="323" parent="15" name="BLK">
+      <Position>26</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="324" parent="15" name="BLKA">
+      <Position>27</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="325" parent="15" name="PF">
+      <Position>28</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="326" parent="15" name="PFD">
+      <Position>29</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="327" parent="15" name="PTS">
+      <Position>30</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="328" parent="15" name="PLUS_MINUS">
+      <Position>31</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="329" parent="15" name="NBA_FANTASY_PTS">
+      <Position>32</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="330" parent="15" name="DD2">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="331" parent="15" name="TD3">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="332" parent="15" name="GP_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="333" parent="15" name="W_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="334" parent="15" name="L_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="335" parent="15" name="W_PCT_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="336" parent="15" name="MIN_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="337" parent="15" name="FGM_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="338" parent="15" name="FGA_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="339" parent="15" name="FG_PCT_RANK">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="340" parent="15" name="FG3M_RANK">
+      <Position>43</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="341" parent="15" name="FG3A_RANK">
+      <Position>44</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="342" parent="15" name="FG3_PCT_RANK">
+      <Position>45</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="343" parent="15" name="FTM_RANK">
+      <Position>46</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="344" parent="15" name="FTA_RANK">
+      <Position>47</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="345" parent="15" name="FT_PCT_RANK">
+      <Position>48</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="346" parent="15" name="OREB_RANK">
+      <Position>49</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="347" parent="15" name="DREB_RANK">
+      <Position>50</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="348" parent="15" name="REB_RANK">
+      <Position>51</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="349" parent="15" name="AST_RANK">
+      <Position>52</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="350" parent="15" name="TOV_RANK">
+      <Position>53</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="351" parent="15" name="STL_RANK">
+      <Position>54</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="352" parent="15" name="BLK_RANK">
+      <Position>55</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="353" parent="15" name="BLKA_RANK">
+      <Position>56</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="354" parent="15" name="PF_RANK">
+      <Position>57</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="355" parent="15" name="PFD_RANK">
+      <Position>58</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="356" parent="15" name="PTS_RANK">
+      <Position>59</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="357" parent="15" name="PLUS_MINUS_RANK">
+      <Position>60</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="358" parent="15" name="NBA_FANTASY_PTS_RANK">
+      <Position>61</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="359" parent="15" name="DD2_RANK">
+      <Position>62</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="360" parent="15" name="TD3_RANK">
+      <Position>63</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="361" parent="15" name="CFID">
+      <Position>64</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="362" parent="15" name="CFPARAMS">
+      <Position>65</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="363" parent="15">
+      <ColNames>PLAYER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="364" parent="15">
+      <ColNames>PLAYER_ID</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefColNames>PLAYER_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="365" parent="15">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="366" parent="16" name="TeamID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="367" parent="16" name="SEASON">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="368" parent="16" name="LeagueID">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="369" parent="16" name="PLAYER">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="370" parent="16" name="NUM">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="371" parent="16" name="POSITION">
+      <Position>6</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="372" parent="16" name="HEIGHT">
+      <Position>7</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="373" parent="16" name="WEIGHT">
+      <Position>8</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="374" parent="16" name="BIRTH_DATE">
+      <Position>9</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="375" parent="16" name="AGE">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="376" parent="16" name="EXP">
+      <Position>11</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="377" parent="16" name="SCHOOL">
+      <Position>12</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="378" parent="16" name="PLAYER_ID">
+      <Position>13</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <key id="379" parent="16">
+      <ColNames>PLAYER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="380" parent="16">
+      <ColNames>TeamID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="381" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="382" parent="17" name="season">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="383" parent="17">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="384" parent="18" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="385" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="386" parent="18" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="387" parent="18" name="rootpage">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="388" parent="18" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="389" parent="19" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="390" parent="19" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="391" parent="20" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="392" parent="20" name="SEASON_YEAR">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="393" parent="20" name="TEAM_CITY">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="394" parent="20" name="TEAM_NAME">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="395" parent="20" name="TEAM_ABBREVIATION">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="396" parent="20" name="TEAM_CONFERENCE">
+      <Position>6</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="397" parent="20" name="TEAM_DIVISION">
+      <Position>7</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="398" parent="20" name="TEAM_CODE">
+      <Position>8</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="399" parent="20" name="W">
+      <Position>9</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="400" parent="20" name="L">
+      <Position>10</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="401" parent="20" name="PCT">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="402" parent="20" name="CONF_RANK">
+      <Position>12</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="403" parent="20" name="DIV_RANK">
+      <Position>13</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="404" parent="20" name="MIN_YEAR">
+      <Position>14</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="405" parent="20" name="MAX_YEAR">
+      <Position>15</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="406" parent="20">
+      <ColNames>TEAM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="407" parent="21" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="408" parent="21" name="TEAM_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="409" parent="21" name="GP">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="410" parent="21" name="W">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="411" parent="21" name="L">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="412" parent="21" name="W_PCT">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="413" parent="21" name="MIN">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="414" parent="21" name="OFF_RATING">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="415" parent="21" name="DEF_RATING">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="416" parent="21" name="NET_RATING">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="417" parent="21" name="AST_PCT">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="418" parent="21" name="AST_TO">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="419" parent="21" name="AST_RATIO">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="420" parent="21" name="OREB_PCT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="421" parent="21" name="DREB_PCT">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="422" parent="21" name="REB_PCT">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="423" parent="21" name="TM_TOV_PCT">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="424" parent="21" name="EFG_PCT">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="425" parent="21" name="TS_PCT">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="426" parent="21" name="PACE">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="427" parent="21" name="PIE">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="428" parent="21" name="GP_RANK">
+      <Position>22</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="429" parent="21" name="W_RANK">
+      <Position>23</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="430" parent="21" name="L_RANK">
+      <Position>24</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="431" parent="21" name="W_PCT_RANK">
+      <Position>25</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="432" parent="21" name="MIN_RANK">
+      <Position>26</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="433" parent="21" name="OFF_RATING_RANK">
+      <Position>27</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="434" parent="21" name="DEF_RATING_RANK">
+      <Position>28</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="435" parent="21" name="NET_RATING_RANK">
+      <Position>29</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="436" parent="21" name="AST_PCT_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="437" parent="21" name="AST_TO_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="438" parent="21" name="AST_RATIO_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="439" parent="21" name="OREB_PCT_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="440" parent="21" name="DREB_PCT_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="441" parent="21" name="REB_PCT_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="442" parent="21" name="TM_TOV_PCT_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="443" parent="21" name="EFG_PCT_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="444" parent="21" name="TS_PCT_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="445" parent="21" name="PACE_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="446" parent="21" name="PIE_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="447" parent="21" name="CFID">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="448" parent="21" name="CFPARAMS">
+      <Position>42</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="449" parent="21">
+      <ColNames>TEAM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="450" parent="21">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="451" parent="22" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="452" parent="22" name="TEAM_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="453" parent="22" name="GP">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="454" parent="22" name="W">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="455" parent="22" name="L">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="456" parent="22" name="W_PCT">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="457" parent="22" name="MIN">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="458" parent="22" name="DEF_RATING">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="459" parent="22" name="DREB">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="460" parent="22" name="DREB_PCT">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="461" parent="22" name="STL">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="462" parent="22" name="BLK">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="463" parent="22" name="OPP_PTS_OFF_TOV">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="464" parent="22" name="OPP_PTS_2ND_CHANCE">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="465" parent="22" name="OPP_PTS_FB">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="466" parent="22" name="OPP_PTS_PAINT">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="467" parent="22" name="GP_RANK">
+      <Position>17</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="468" parent="22" name="W_RANK">
+      <Position>18</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="469" parent="22" name="L_RANK">
+      <Position>19</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="470" parent="22" name="W_PCT_RANK">
+      <Position>20</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="471" parent="22" name="MIN_RANK">
+      <Position>21</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="472" parent="22" name="DEF_RATING_RANK">
+      <Position>22</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="473" parent="22" name="DREB_RANK">
+      <Position>23</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="474" parent="22" name="DREB_PCT_RANK">
+      <Position>24</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="475" parent="22" name="STL_RANK">
+      <Position>25</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="476" parent="22" name="BLK_RANK">
+      <Position>26</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="477" parent="22" name="OPP_PTS_OFF_TOV_RANK">
+      <Position>27</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="478" parent="22" name="OPP_PTS_2ND_CHANCE_RANK">
+      <Position>28</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="479" parent="22" name="OPP_PTS_FB_RANK">
+      <Position>29</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="480" parent="22" name="OPP_PTS_PAINT_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="481" parent="22" name="CFID">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="482" parent="22" name="CFPARAMS">
+      <Position>32</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="483" parent="22">
+      <ColNames>TEAM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="484" parent="22">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="485" parent="23" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="486" parent="23" name="TEAM_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="487" parent="23" name="GP">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="488" parent="23" name="W">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="489" parent="23" name="L">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="490" parent="23" name="W_PCT">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="491" parent="23" name="MIN">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="492" parent="23" name="PCT_FGA_2PT">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="493" parent="23" name="PCT_FGA_3PT">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="494" parent="23" name="PCT_PTS_2PT">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="495" parent="23" name="PCT_PTS_2PT_MR">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="496" parent="23" name="PCT_PTS_3PT">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="497" parent="23" name="PCT_PTS_FB">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="498" parent="23" name="PCT_PTS_FT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="499" parent="23" name="PCT_PTS_OFF_TOV">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="500" parent="23" name="PCT_PTS_PAINT">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="501" parent="23" name="PCT_AST_2PM">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="502" parent="23" name="PCT_UAST_2PM">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="503" parent="23" name="PCT_AST_3PM">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="504" parent="23" name="PCT_UAST_3PM">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="505" parent="23" name="PCT_AST_FGM">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="506" parent="23" name="PCT_UAST_FGM">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="507" parent="23" name="GP_RANK">
+      <Position>23</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="508" parent="23" name="W_RANK">
+      <Position>24</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="509" parent="23" name="L_RANK">
+      <Position>25</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="510" parent="23" name="W_PCT_RANK">
+      <Position>26</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="511" parent="23" name="MIN_RANK">
+      <Position>27</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="512" parent="23" name="PCT_FGA_2PT_RANK">
+      <Position>28</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="513" parent="23" name="PCT_FGA_3PT_RANK">
+      <Position>29</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="514" parent="23" name="PCT_PTS_2PT_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="515" parent="23" name="PCT_PTS_2PT_MR_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="516" parent="23" name="PCT_PTS_3PT_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="517" parent="23" name="PCT_PTS_FB_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="518" parent="23" name="PCT_PTS_FT_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="519" parent="23" name="PCT_PTS_OFF_TOV_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="520" parent="23" name="PCT_PTS_PAINT_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="521" parent="23" name="PCT_AST_2PM_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="522" parent="23" name="PCT_UAST_2PM_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="523" parent="23" name="PCT_AST_3PM_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="524" parent="23" name="PCT_UAST_3PM_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="525" parent="23" name="PCT_AST_FGM_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="526" parent="23" name="PCT_UAST_FGM_RANK">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="527" parent="23" name="CFID">
+      <Position>43</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="528" parent="23" name="CFPARAMS">
+      <Position>44</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="529" parent="23">
+      <ColNames>TEAM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="530" parent="23">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="531" parent="24" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="532" parent="24" name="TEAM_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="533" parent="24" name="Restricted Area FGM">
+      <Position>3</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="534" parent="24" name="Restricted Area FGA">
+      <Position>4</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="535" parent="24" name="Restricted Area FG_PCT">
+      <Position>5</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="536" parent="24" name="In The Paint (Non-RA) FGM">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="537" parent="24" name="In The Paint (Non-RA) FGA">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="538" parent="24" name="In The Paint (Non-RA) FG_PCT">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="539" parent="24" name="Mid-Range FGM">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="540" parent="24" name="Mid-Range FGA">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="541" parent="24" name="Mid-Range FG_PCT">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="542" parent="24" name="Left Corner 3 FGM">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="543" parent="24" name="Left Corner 3 FGA">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="544" parent="24" name="Left Corner 3 FG_PCT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="545" parent="24" name="Right Corner 3 FGM">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="546" parent="24" name="Right Corner 3 FGA">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="547" parent="24" name="Right Corner 3 FG_PCT">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="548" parent="24" name="Above the Break 3 FGM">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="549" parent="24" name="Above the Break 3 FGA">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="550" parent="24" name="Above the Break 3 FG_PCT">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="551" parent="24" name="Backcourt FGM">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="552" parent="24" name="Backcourt FGA">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="553" parent="24" name="Backcourt FG_PCT">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <key id="554" parent="24">
+      <ColNames>TEAM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="555" parent="24">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="556" parent="25" name="TEAM_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="557" parent="25" name="TEAM_NAME">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="558" parent="25" name="GP">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="559" parent="25" name="W">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="560" parent="25" name="L">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="561" parent="25" name="W_PCT">
+      <Position>6</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="562" parent="25" name="MIN">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="563" parent="25" name="FGM">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="564" parent="25" name="FGA">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="565" parent="25" name="FG_PCT">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="566" parent="25" name="FG3M">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="567" parent="25" name="FG3A">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="568" parent="25" name="FG3_PCT">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="569" parent="25" name="FTM">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="570" parent="25" name="FTA">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="571" parent="25" name="FT_PCT">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="572" parent="25" name="OREB">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="573" parent="25" name="DREB">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="574" parent="25" name="REB">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="575" parent="25" name="AST">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="576" parent="25" name="TOV">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="577" parent="25" name="STL">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="578" parent="25" name="BLK">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="579" parent="25" name="BLKA">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="580" parent="25" name="PF">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="581" parent="25" name="PFD">
+      <Position>26</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="582" parent="25" name="PTS">
+      <Position>27</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="583" parent="25" name="PLUS_MINUS">
+      <Position>28</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="584" parent="25" name="GP_RANK">
+      <Position>29</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="585" parent="25" name="W_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="586" parent="25" name="L_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="587" parent="25" name="W_PCT_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="588" parent="25" name="MIN_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="589" parent="25" name="FGM_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="590" parent="25" name="FGA_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="591" parent="25" name="FG_PCT_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="592" parent="25" name="FG3M_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="593" parent="25" name="FG3A_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="594" parent="25" name="FG3_PCT_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="595" parent="25" name="FTM_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="596" parent="25" name="FTA_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="597" parent="25" name="FT_PCT_RANK">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="598" parent="25" name="OREB_RANK">
+      <Position>43</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="599" parent="25" name="DREB_RANK">
+      <Position>44</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="600" parent="25" name="REB_RANK">
+      <Position>45</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="601" parent="25" name="AST_RANK">
+      <Position>46</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="602" parent="25" name="TOV_RANK">
+      <Position>47</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="603" parent="25" name="STL_RANK">
+      <Position>48</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="604" parent="25" name="BLK_RANK">
+      <Position>49</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="605" parent="25" name="BLKA_RANK">
+      <Position>50</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="606" parent="25" name="PF_RANK">
+      <Position>51</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="607" parent="25" name="PFD_RANK">
+      <Position>52</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="608" parent="25" name="PTS_RANK">
+      <Position>53</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="609" parent="25" name="PLUS_MINUS_RANK">
+      <Position>54</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="610" parent="25" name="CFID">
+      <Position>55</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="611" parent="25" name="CFPARAMS">
+      <Position>56</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <key id="612" parent="25">
+      <ColNames>TEAM_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="613" parent="25">
+      <ColNames>TEAM_ID</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefColNames>TEAM_ID</RefColNames>
+    </foreign-key>
+    <column id="614" parent="26" name="index">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="615" parent="26" name="TEAM_ID">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="616" parent="26" name="TEAM_NAME">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="617" parent="26" name="GP">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="618" parent="26" name="W">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="619" parent="26" name="L">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="620" parent="26" name="W_PCT">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="621" parent="26" name="MIN">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="622" parent="26" name="FGM">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="623" parent="26" name="FGA">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="624" parent="26" name="FG_PCT">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="625" parent="26" name="FG3M">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="626" parent="26" name="FG3A">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="627" parent="26" name="FG3_PCT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="628" parent="26" name="FTM">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="629" parent="26" name="FTA">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="630" parent="26" name="FT_PCT">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="631" parent="26" name="OREB">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="632" parent="26" name="DREB">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="633" parent="26" name="REB">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="634" parent="26" name="AST">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="635" parent="26" name="TOV">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="636" parent="26" name="STL">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="637" parent="26" name="BLK">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="638" parent="26" name="BLKA">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="639" parent="26" name="PF">
+      <Position>26</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="640" parent="26" name="PFD">
+      <Position>27</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="641" parent="26" name="PTS">
+      <Position>28</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="642" parent="26" name="PLUS_MINUS">
+      <Position>29</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="643" parent="26" name="GP_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="644" parent="26" name="W_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="645" parent="26" name="L_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="646" parent="26" name="W_PCT_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="647" parent="26" name="MIN_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="648" parent="26" name="FGM_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="649" parent="26" name="FGA_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="650" parent="26" name="FG_PCT_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="651" parent="26" name="FG3M_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="652" parent="26" name="FG3A_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="653" parent="26" name="FG3_PCT_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="654" parent="26" name="FTM_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="655" parent="26" name="FTA_RANK">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="656" parent="26" name="FT_PCT_RANK">
+      <Position>43</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="657" parent="26" name="OREB_RANK">
+      <Position>44</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="658" parent="26" name="DREB_RANK">
+      <Position>45</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="659" parent="26" name="REB_RANK">
+      <Position>46</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="660" parent="26" name="AST_RANK">
+      <Position>47</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="661" parent="26" name="TOV_RANK">
+      <Position>48</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="662" parent="26" name="STL_RANK">
+      <Position>49</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="663" parent="26" name="BLK_RANK">
+      <Position>50</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="664" parent="26" name="BLKA_RANK">
+      <Position>51</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="665" parent="26" name="PF_RANK">
+      <Position>52</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="666" parent="26" name="PFD_RANK">
+      <Position>53</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="667" parent="26" name="PTS_RANK">
+      <Position>54</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="668" parent="26" name="PLUS_MINUS_RANK">
+      <Position>55</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="669" parent="26" name="CFID">
+      <Position>56</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="670" parent="26" name="CFPARAMS">
+      <Position>57</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <index id="671" parent="26" name="ix_team_stats_away_index">
+      <ColNames>index</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <column id="672" parent="27" name="index">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="673" parent="27" name="TEAM_ID">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="674" parent="27" name="TEAM_NAME">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="675" parent="27" name="GP">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="676" parent="27" name="W">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="677" parent="27" name="L">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="678" parent="27" name="W_PCT">
+      <Position>7</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="679" parent="27" name="MIN">
+      <Position>8</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="680" parent="27" name="FGM">
+      <Position>9</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="681" parent="27" name="FGA">
+      <Position>10</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="682" parent="27" name="FG_PCT">
+      <Position>11</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="683" parent="27" name="FG3M">
+      <Position>12</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="684" parent="27" name="FG3A">
+      <Position>13</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="685" parent="27" name="FG3_PCT">
+      <Position>14</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="686" parent="27" name="FTM">
+      <Position>15</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="687" parent="27" name="FTA">
+      <Position>16</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="688" parent="27" name="FT_PCT">
+      <Position>17</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="689" parent="27" name="OREB">
+      <Position>18</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="690" parent="27" name="DREB">
+      <Position>19</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="691" parent="27" name="REB">
+      <Position>20</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="692" parent="27" name="AST">
+      <Position>21</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="693" parent="27" name="TOV">
+      <Position>22</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="694" parent="27" name="STL">
+      <Position>23</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="695" parent="27" name="BLK">
+      <Position>24</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="696" parent="27" name="BLKA">
+      <Position>25</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="697" parent="27" name="PF">
+      <Position>26</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="698" parent="27" name="PFD">
+      <Position>27</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="699" parent="27" name="PTS">
+      <Position>28</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="700" parent="27" name="PLUS_MINUS">
+      <Position>29</Position>
+      <DataType>REAL|0s</DataType>
+    </column>
+    <column id="701" parent="27" name="GP_RANK">
+      <Position>30</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="702" parent="27" name="W_RANK">
+      <Position>31</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="703" parent="27" name="L_RANK">
+      <Position>32</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="704" parent="27" name="W_PCT_RANK">
+      <Position>33</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="705" parent="27" name="MIN_RANK">
+      <Position>34</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="706" parent="27" name="FGM_RANK">
+      <Position>35</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="707" parent="27" name="FGA_RANK">
+      <Position>36</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="708" parent="27" name="FG_PCT_RANK">
+      <Position>37</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="709" parent="27" name="FG3M_RANK">
+      <Position>38</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="710" parent="27" name="FG3A_RANK">
+      <Position>39</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="711" parent="27" name="FG3_PCT_RANK">
+      <Position>40</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="712" parent="27" name="FTM_RANK">
+      <Position>41</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="713" parent="27" name="FTA_RANK">
+      <Position>42</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="714" parent="27" name="FT_PCT_RANK">
+      <Position>43</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="715" parent="27" name="OREB_RANK">
+      <Position>44</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="716" parent="27" name="DREB_RANK">
+      <Position>45</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="717" parent="27" name="REB_RANK">
+      <Position>46</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="718" parent="27" name="AST_RANK">
+      <Position>47</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="719" parent="27" name="TOV_RANK">
+      <Position>48</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="720" parent="27" name="STL_RANK">
+      <Position>49</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="721" parent="27" name="BLK_RANK">
+      <Position>50</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="722" parent="27" name="BLKA_RANK">
+      <Position>51</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="723" parent="27" name="PF_RANK">
+      <Position>52</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="724" parent="27" name="PFD_RANK">
+      <Position>53</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="725" parent="27" name="PTS_RANK">
+      <Position>54</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="726" parent="27" name="PLUS_MINUS_RANK">
+      <Position>55</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="727" parent="27" name="CFID">
+      <Position>56</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="728" parent="27" name="CFPARAMS">
+      <Position>57</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <index id="729" parent="27" name="ix_team_stats_home_index">
+      <ColNames>index</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+  </database-model>
+</dataSource>
